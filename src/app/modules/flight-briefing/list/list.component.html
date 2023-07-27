@@ -5,11 +5,10 @@
     </div>
     <div
       *ngFor="let item of row.items"
-      class="flex flex-col sm:flex-row border-b border-x"
-    >
+      class="flex flex-col sm:flex-row border-b border-x">
       <div class="basis-2/12 p-2">{{ item.queryType }}</div>
       <div class="basis-2/12 p-2 sm:border-x">
-        {{ item.reportTime | date: "short" }}
+        {{ item.reportTime | date: 'short' }}
       </div>
       <div [innerHTML]="item.text" class="basis-8/12 p-2"></div>
     </div>

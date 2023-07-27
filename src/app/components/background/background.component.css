@@ -29,7 +29,7 @@
 
 .cloud:before,
 .cloud:after {
-  content: "";
+  content: '';
   position: absolute;
   background: #fff;
   width: 100px;

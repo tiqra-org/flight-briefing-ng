@@ -51,8 +51,8 @@ export function atLeastOneCheckboxRequired(): ValidatorFn {
 export function atLeastOneFieldRequired(controlNames: string[]) {
   return (group: AbstractControl) => {
     if (
-      controlNames.map((name) => group.get(name)).filter((c) => c?.value)
-        .length === 0
+      controlNames.map(name => group.get(name)).filter(c => c?.value).length ===
+      0
     ) {
       return { atLeastOneRequired: true };
     }

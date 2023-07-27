@@ -15,12 +15,12 @@ export class ListComponent {
   data?: IFlightBriefingListItem[];
 
   get listItems() {
-    const parsedData = this.data?.map((item) => {
+    const parsedData = this.data?.map(item => {
       const parsedText = item.text.trim().split(' ');
       const convertedText = parsedText.map((text: string) => {
         const trimmedText = text.trim();
         let highlightClass = '';
-        HIGHLIGHT_CODES.forEach((code) => {
+        HIGHLIGHT_CODES.forEach(code => {
           if (trimmedText.indexOf(code) != -1) {
             const parsedCode = trimmedText.split(code);
             let numericValue = +parsedCode[1];

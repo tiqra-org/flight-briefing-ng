@@ -7,8 +7,7 @@
           type="checkbox"
           [formControlName]="i"
           [id]="item.id.toLowerCase()"
-          class="mr-4"
-        />
+          class="mr-4" />
         <label [for]="item.id.toLocaleLowerCase()">{{ item.name }}</label>
       </div>
     </div>
@@ -17,8 +16,7 @@
         reportTypesFormArray.touched &&
         reportTypesFormArray.errors?.requireCheckboxesToBeChecked
       "
-      class="sm:col-start-2 text-rose-600"
-    >
+      class="sm:col-start-2 text-rose-600">
       <div class="col-start-2 text-rose-600" i18n="@@messageTypesRequired">
         At least one message type must be selected
       </div>
@@ -35,8 +33,7 @@
         type="text"
         placeholder="e.g. LKPR"
         class="uppercase border px-2 py-1 w-full dark:bg-slate-900"
-        toUppercase
-      />
+        toUppercase />
       <help-text i18n="@@airportsHelpText"
         >Multiple airport codes can by separated by space</help-text
       >
@@ -44,8 +41,7 @@
   </div>
   <div
     *ngIf="airportsFormControl.errors?.airportsPattern"
-    class="grid sm:grid-cols-2 pb-4 items-center"
-  >
+    class="grid sm:grid-cols-2 pb-4 items-center">
     <div class="col-start-2 text-rose-600" i18n="@@airportsPatternMismatch">
       Airport code should contain 4 characters. Multiple airport codes are
       separated by space
@@ -61,8 +57,7 @@
         type="text"
         placeholder="e.g. SQ"
         class="uppercase border px-2 py-1 w-full dark:bg-slate-900"
-        toUppercase
-      />
+        toUppercase />
       <help-text i18n="@@countriesHelpText"
         >Multiple country codes can by separated by space</help-text
       >
@@ -70,8 +65,7 @@
   </div>
   <div
     *ngIf="countriesFormControl.errors?.countriesPattern"
-    class="grid sm:grid-cols-2 pb-4 items-center"
-  >
+    class="grid sm:grid-cols-2 pb-4 items-center">
     <div class="col-start-2 text-rose-600" i18n="@@countriesPatternMismatch">
       Country code should contain 2 characters. Multiple country codes are
       separated by space
@@ -82,8 +76,7 @@
       (countriesFormControl.dirty || airportsFormControl.dirty) &&
       form.errors?.atLeastOneRequired
     "
-    class="grid sm:grid-cols-2 pb-4 items-center"
-  >
+    class="grid sm:grid-cols-2 pb-4 items-center">
     <div class="col-start-2 text-rose-600" i18n="@@airportsOrCountriesRequired">
       At least one airport (ICAO code) or country (WMO code) is required
     </div>
@@ -92,8 +85,7 @@
     <button
       type="submit"
       class="border px-4 py-2 rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-900"
-      i18n="@@createBriefing"
-    >
+      i18n="@@createBriefing">
       Create briefing
     </button>
   </div>
