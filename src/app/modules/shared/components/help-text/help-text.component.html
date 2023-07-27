@@ -1,0 +1,13 @@
+<button
+  type="button"
+  class="absolute right-0 top-0 bottom-0 mr-2"
+  (mouseover)="visible = true"
+  (mouseleave)="visible = false">
+  <question-icon class="block w-4 h-4"></question-icon>
+</button>
+
+<div
+  *ngIf="visible"
+  class="absolute bg-gray-700 text-white p-4 z-10 rounded helptext transition-all transform duration-500 delay-100">
+  <ng-content></ng-content>
+</div>

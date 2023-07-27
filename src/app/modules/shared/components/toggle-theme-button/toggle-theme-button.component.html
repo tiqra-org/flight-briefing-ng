@@ -1,0 +1,8 @@
+<button (click)="toggleDark()">
+  <light-mode-icon
+    *ngIf="isDark"
+    class="dark:text-white block w-4 h-4"></light-mode-icon>
+  <dark-mode-icon
+    *ngIf="!isDark"
+    class="dark:text-white block w-4 h-4"></dark-mode-icon>
+</button>

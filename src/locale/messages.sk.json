@@ -1,0 +1,18 @@
+{
+  "locale": "sk",
+  "translations": {
+    "messageTypes": "Typ správy",
+    "messageTypesRequired": "Zvoľte aspoň jeden typ správy",
+    "airports": "Letiská",
+    "airportsPlaceholder": "napr. LKPR",
+    "airportsHelpText": "Môžete zadať viac kódov letísk odelených medzerou",
+    "airportsPatternMismatch": "Airport code should contain 4 characters. Multiple airport codes are separated by space",
+    "countries": "Krajiny",
+    "countriesPlaceholder": "napr. SQ",
+    "countriesHelpText": "Môžete zadať viac kódov krajín odelených medzerou",
+    "countriesPatternMismatch": "Kód krajiny musí obsahovať 2 znaky. Viac krajín môže byť oddelených medzerou",
+    "airportsOrCountriesRequired": "Musí byť zadaný aspoň jeden kód letiska (ICAO kód) alebo krajiny (WMO kód)",
+    "createBriefing": "Nový letový plán",
+    "noDataAvailable": "Neboli nájdené žiadne údaje"
+  }
+}
