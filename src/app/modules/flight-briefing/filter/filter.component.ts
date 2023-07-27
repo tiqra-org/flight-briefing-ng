@@ -12,6 +12,7 @@ import {
   atLeastOneFieldRequired,
   regexPatternValidator,
 } from './filter.component.validators';
+import { IFlightBriefingFilterData } from '../flight-briefing.model';
 
 @Component({
   selector: 'flight-briefing-filter',
@@ -19,7 +20,7 @@ import {
   styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent {
-  @Output() query: EventEmitter<any> = new EventEmitter();
+  @Output() query: EventEmitter<IFlightBriefingFilterData> = new EventEmitter();
 
   reportTypes = reportTypes;
 
