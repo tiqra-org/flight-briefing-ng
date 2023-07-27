@@ -1,0 +1,18 @@
+{
+  "locale": "en",
+  "translations": {
+    "messageTypes": "Message types",
+    "messageTypesRequired": "At least one message type must be selected",
+    "airports": "Airports",
+    "airportsPlaceholder": "e.g. LKPR",
+    "airportsHelpText": "Multiple airport codes can by separated by space",
+    "airportsPatternMismatch": "Airport code should contain 4 characters. Multiple airport codes are separated by space",
+    "countries": "Countries",
+    "countriesPlaceholder": "e.g. SQ",
+    "countriesHelpText": "Multiple country codes can by separated by space",
+    "countriesPatternMismatch": "Country code should contain 2 characters. Multiple country codes are separated by space",
+    "airportsOrCountriesRequired": "At least one airport (ICAO code) or country (WMO code) is required",
+    "createBriefing": "Create briefing",
+    "noDataAvailable": " No data available "
+  }
+}

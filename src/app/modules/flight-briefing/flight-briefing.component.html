@@ -1,0 +1,12 @@
+<div
+    class="container mx-auto max-w-screen-md pt-8 bg-white dark:bg-slate-800 dark:text-white p-2 sm:p-8 min-h-screen"
+  >
+    <flight-briefing-filter (query)="fetchData($event)" ></flight-briefing-filter>
+    <flight-briefing-list *ngIf="data && data.length > 0, else NoData" [data]="data" ></flight-briefing-list>
+    <ng-template #NoData>
+      <div *ngIf="data && data.length === 0 && !pending" class="flex justify-center pt-8" i18n="@@noDataAvailable">No data available</div>
+    </ng-template>
+    <div *ngIf="pending" class="flex justify-center">
+      <loading-icon class="w-32 h-32"></loading-icon>
+    </div>
+</div>

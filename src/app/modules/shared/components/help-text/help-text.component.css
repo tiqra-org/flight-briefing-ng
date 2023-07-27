@@ -1,0 +1,11 @@
+@media (max-width: 640px) {
+  .helptext {
+    right: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .helptext {
+    right: -100%;
+  }
+}

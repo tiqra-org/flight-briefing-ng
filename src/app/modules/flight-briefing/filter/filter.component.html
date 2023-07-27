@@ -1,0 +1,67 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="grid sm:grid-cols-2 pb-4 sm:pb-8 items-center">
+    <label class="pb-2 sm:pb-0" i18n="@@messageTypes">Message types</label>
+    <div class="grid gap-2 sm:gap-4 sm:grid-cols-3" formArrayName="reportTypes">
+      <div *ngFor="let item of reportTypes; let i = index">
+        <input
+          type="checkbox"
+          [formControlName]="i"
+          [id]="item.id.toLowerCase()"
+          class="mr-4"
+        />
+        <label [for]="item.id.toLocaleLowerCase()">{{ item.name }}</label>
+        </div>
+    </div>
+    <div *ngIf="reportTypesFormArray.touched && reportTypesFormArray.errors?.requireCheckboxesToBeChecked" class="sm:col-start-2 text-rose-600">
+      <div class="col-start-2 text-rose-600" i18n="@@messageTypesRequired">At least one message type must be selected</div>
+    </div>
+  </div>
+  <div class="grid sm:grid-cols-2 pb-4 items-center">
+    <label for="airports" i18n="@@airports">Airports</label>
+    <div class="relative">
+      <input
+        i18n-placeholder="@@airportsPlaceholder"
+        v-model.lazy="airports"
+        formControlName="airports"
+        id="airports"
+        type="text"
+        placeholder="e.g. LKPR"
+        class="uppercase border px-2 py-1 w-full dark:bg-slate-900"
+        toUppercase
+      />
+      <help-text i18n="@@airportsHelpText">Multiple airport codes can by separated by space</help-text>
+    </div>
+  </div>
+  <div *ngIf="airportsFormControl.errors?.airportsPattern" class="grid sm:grid-cols-2 pb-4 items-center">
+    <div class="col-start-2 text-rose-600" i18n="@@airportsPatternMismatch">Airport code should contain 4 characters. Multiple airport codes are separated by space</div>
+  </div>
+  <div class="grid sm:grid-cols-2 pb-2 items-center">
+    <label for="countries" i18n="@@countries">Countries</label>
+    <div class="relative">
+      <input
+        i18n-placeholder="@@countriesPlaceholder"
+        formControlName="countries"
+        id="countries"
+        type="text"
+        placeholder="e.g. SQ"
+        class="uppercase border px-2 py-1 w-full dark:bg-slate-900"
+        toUppercase
+      />
+      <help-text i18n="@@countriesHelpText">Multiple country codes can by separated by space</help-text>
+    </div>
+  </div>
+  <div *ngIf="countriesFormControl.errors?.countriesPattern" class="grid sm:grid-cols-2 pb-4 items-center">
+    <div class="col-start-2 text-rose-600" i18n="@@countriesPatternMismatch">Country code should contain 2 characters. Multiple country codes are separated by space</div>
+  </div>
+  <div *ngIf="(countriesFormControl.dirty || airportsFormControl.dirty) && form.errors?.atLeastOneRequired" class="grid sm:grid-cols-2 pb-4 items-center">
+    <div class="col-start-2 text-rose-600" i18n="@@airportsOrCountriesRequired">At least one airport (ICAO code) or country (WMO code) is required</div>
+  </div>
+  <div class="flex justify-center sm:justify-end my-4">
+    <button
+      type="submit"
+      class="border px-4 py-2 rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-900"
+      i18n="@@createBriefing"
+    >Create briefing</button>
+  </div>
+</form>
+
