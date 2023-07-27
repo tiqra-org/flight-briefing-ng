@@ -26,7 +26,7 @@ export class FlightBriefingComponent {
           ...data
         }
       ]
-    }
+    };
 
     const responseData = await this.service.fetch(requestData);
 

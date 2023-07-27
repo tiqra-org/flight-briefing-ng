@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'light-mode-icon',
   templateUrl: './light-mode-icon.component.html',
 })
-export class LightModeIconComponent {
-
-}
+export class LightModeIconComponent {}

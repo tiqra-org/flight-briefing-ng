@@ -1,4 +1,4 @@
 export interface ICommonFilter {
-  id: string
-  method: string
+  id: string;
+  method: string;
 }

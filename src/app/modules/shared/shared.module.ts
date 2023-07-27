@@ -23,7 +23,7 @@ import { ApiClient } from './services/api/api-client';
     UpperCaseDirective,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     HelpTextComponent,

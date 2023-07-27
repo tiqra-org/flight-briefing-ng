@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'question-icon',
   templateUrl: './question-icon.component.html',
 })
-export class QuestionIconComponent {
-
-}
+export class QuestionIconComponent {}

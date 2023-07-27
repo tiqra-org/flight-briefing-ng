@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'loading-icon',
   templateUrl: './loading-icon.component.html',
 })
-export class LoadingIconComponent {
-
-}
+export class LoadingIconComponent {}

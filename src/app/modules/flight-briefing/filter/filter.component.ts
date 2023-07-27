@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 import { FormArray } from '@angular/forms';
 import { AIRPORTS_PATTERN, COUNTRIES_PATTERN, reportTypes } from '../flight-briefing.constants';
 import { stringToArray } from '../../shared/shared.utils';
@@ -8,16 +8,13 @@ import { atLeastOneCheckboxRequired, atLeastOneFieldRequired, regexPatternValida
 @Component({
   selector: 'flight-briefing-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.css']
+  styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent {
 
   @Output() query: EventEmitter<any> = new EventEmitter();
 
   reportTypes = reportTypes;
-  reportTypesError = '';
-  airportsError = '';
-  airportsAndCountriesError = '';
 
   form = new FormGroup({
     reportTypes: new FormArray(Object.keys(this.reportTypes).map(() => new FormControl(false)), atLeastOneCheckboxRequired()),
@@ -31,7 +28,6 @@ export class FilterComponent {
     }),
   }, atLeastOneFieldRequired(['airports', 'countries']));
 
-  constructor(private fb: FormBuilder) { }
 
   get reportTypesFormArray() {
     return this.form.controls.reportTypes as FormArray;
@@ -49,7 +45,7 @@ export class FilterComponent {
 
   get airportsValue(): string[] {
     const v = this.airportsFormControl.value;
-    return v ? stringToArray(v.toUpperCase()) : []
+    return v ? stringToArray(v.toUpperCase()) : [];
   }
 
   get countriesFormControl(): AbstractControl {
@@ -58,7 +54,7 @@ export class FilterComponent {
 
   get countriesValue(): string[] {
     const v = this.countriesFormControl.value;
-    return v ? stringToArray(v.toUpperCase()) : []
+    return v ? stringToArray(v.toUpperCase()) : [];
   }
   
   onSubmit = () => {
@@ -72,7 +68,7 @@ export class FilterComponent {
         reportTypes,
         airports,
         countries,
-      }
+      };
 
       this.query.emit(data);
     } else {

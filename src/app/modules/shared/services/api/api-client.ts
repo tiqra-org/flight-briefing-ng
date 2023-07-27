@@ -4,14 +4,14 @@ import type { IApiClient } from './api-client.interface';
 
 const headers = {
   Accept: 'application/json',
-  'Content-Type': 'application/json'
-}
+  'Content-Type': 'application/json',
+};
 
 const enum HttpStatusCodes {
   Ok = 200,
   Created = 201,
-  NoContent = 204
-}
+  NoContent = 204,
+};
 
 @Injectable()
 export class ApiClient<T> implements IApiClient<T> {
@@ -19,27 +19,27 @@ export class ApiClient<T> implements IApiClient<T> {
   private async send(url: string, request: RequestInit): Promise<T> {
     const defaults = {
       headers
-    }
+    };
 
-    const init = Object.assign({}, defaults, request)
+    const init = Object.assign({}, defaults, request);
 
-    const response = await fetch(url, init)
+    const response = await fetch(url, init);
 
     if (response.status === HttpStatusCodes.NoContent) {
-      return Promise.resolve(null as T)
+      return Promise.resolve(null as T);
     } else {
-      return response.json()
+      return response.json();
     }
   }
 
   fetch(url: string, filter: any, method: MethodType = 'GET'): Promise<T> {
-    const body = typeof filter === 'object' ? JSON.stringify(filter) : filter
+    const body = typeof filter === 'object' ? JSON.stringify(filter) : filter;
 
     const request: RequestInit = {
       method,
-      body
-    }
+      body,
+    };
 
-    return this.send(url, request)
+    return this.send(url, request);
   }
 }

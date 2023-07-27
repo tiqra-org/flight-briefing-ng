@@ -11,6 +11,6 @@ export class FlightBriefingRepository implements IRepository<IFlightBriefingFilt
   constructor(private apiClient: ApiClient<IFlightBriefingResponse>) {}
 
   fetch(filter: IFlightBriefingFilter, method: MethodType): Promise<IFlightBriefingResponse> {
-    return this.apiClient.fetch(API.OPMET, filter, method)
+    return this.apiClient.fetch(API.OPMET, filter, method);
   }
 }

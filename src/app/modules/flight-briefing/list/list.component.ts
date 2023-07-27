@@ -14,30 +14,30 @@ export class ListComponent {
   
   get listItems() {
     const parsedData = this.data?.map((item) => {
-      const parsedText = item.text.trim().split(' ')
+      const parsedText = item.text.trim().split(' ');
       const convertedText = parsedText.map((text: string) => {
-        const trimmedText = text.trim()
-        let highlightClass = ''
+        const trimmedText = text.trim();
+        let highlightClass = '';
         HIGHLIGHT_CODES.forEach((code) => {
           if (trimmedText.indexOf(code) != -1) {
-            const parsedCode = trimmedText.split(code)
-            let numericValue = +parsedCode[1]
+            const parsedCode = trimmedText.split(code);
+            let numericValue = +parsedCode[1];
             if (isNaN(numericValue)) {
-              numericValue = +parsedCode[1].substring(0, 3)
+              numericValue = +parsedCode[1].substring(0, 3);
             }
-            highlightClass = numericValue > 30 ? HIGHLIGHT_COLORS.DANGER : HIGHLIGHT_COLORS.INFO
+            highlightClass = numericValue > 30 ? HIGHLIGHT_COLORS.DANGER : HIGHLIGHT_COLORS.INFO;
           }
         })
         return text.trim()
           ? `<div class="inline-block mr-1 ${highlightClass}">${text.trim()}</div>`
-          : ''
+          : '';
       })
       const text = convertedText.join('')
-      return { ...item, text }
+      return { ...item, text };
     })
     const groupedData = parsedData
       ? groupBy(parsedData, ({ stationId }) => stationId, 'stationId')
-      : {}
+      : {};
     const result = Object.entries(groupedData).map(([key, value]) => ({
       key,
       items: value,
