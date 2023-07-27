@@ -61,10 +61,14 @@
               "namedChunks": true
             },
             "sk": {
-              "localize": ["sk"]
+              "localize": [
+                "sk"
+              ]
             },
             "en": {
-              "localize": ["en"]
+              "localize": [
+                "en"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -110,8 +114,22 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
