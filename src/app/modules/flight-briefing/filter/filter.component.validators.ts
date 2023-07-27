@@ -22,7 +22,7 @@ export const regexPatternValidator = (
       return null;
     }
 
-    const validValues = arrValue.filter((c: string) => c.match(pattern));
+    const validValues = arrValue.filter((c: string) => pattern.exec(c));
     if (validValues.length === arrValue.length) {
       return null;
     }

@@ -14,8 +14,8 @@ export class ListComponent {
   @Input()
   data?: IFlightBriefingListItem[];
 
-  get listItems() {
-    const parsedData = this.data?.map(item => {
+  parseData() {
+    return this.data?.map(item => {
       const parsedText = item.text.trim().split(' ');
       const convertedText = parsedText.map((text: string) => {
         const trimmedText = text.trim();
@@ -40,6 +40,10 @@ export class ListComponent {
       const text = convertedText.join('');
       return { ...item, text };
     });
+  }
+
+  get listItems() {
+    const parsedData = this.parseData();
     const groupedData = parsedData
       ? groupBy(parsedData, ({ stationId }) => stationId, 'stationId')
       : {};
