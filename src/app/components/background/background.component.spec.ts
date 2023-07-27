@@ -8,7 +8,7 @@ describe('BackgroundComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BackgroundComponent]
+      declarations: [BackgroundComponent],
     });
     fixture = TestBed.createComponent(BackgroundComponent);
     component = fixture.componentInstance;

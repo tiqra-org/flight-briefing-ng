@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { HIGHLIGHT_CODES, HIGHLIGHT_COLORS } from '../flight-briefing.constants';
+import {
+  HIGHLIGHT_CODES,
+  HIGHLIGHT_COLORS,
+} from '../flight-briefing.constants';
 import { groupBy } from 'src/app/modules/shared/shared.utils';
 import { IFlightBriefingListItem } from '../flight-briefing.model';
 
@@ -8,10 +11,9 @@ import { IFlightBriefingListItem } from '../flight-briefing.model';
   templateUrl: './list.component.html',
 })
 export class ListComponent {
-
   @Input()
   data?: IFlightBriefingListItem[];
-  
+
   get listItems() {
     const parsedData = this.data?.map((item) => {
       const parsedText = item.text.trim().split(' ');
@@ -25,16 +27,19 @@ export class ListComponent {
             if (isNaN(numericValue)) {
               numericValue = +parsedCode[1].substring(0, 3);
             }
-            highlightClass = numericValue > 30 ? HIGHLIGHT_COLORS.DANGER : HIGHLIGHT_COLORS.INFO;
+            highlightClass =
+              numericValue > 30
+                ? HIGHLIGHT_COLORS.DANGER
+                : HIGHLIGHT_COLORS.INFO;
           }
-        })
+        });
         return text.trim()
           ? `<div class="inline-block mr-1 ${highlightClass}">${text.trim()}</div>`
           : '';
-      })
-      const text = convertedText.join('')
+      });
+      const text = convertedText.join('');
       return { ...item, text };
-    })
+    });
     const groupedData = parsedData
       ? groupBy(parsedData, ({ stationId }) => stationId, 'stationId')
       : {};

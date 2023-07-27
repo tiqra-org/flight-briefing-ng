@@ -1,5 +1,5 @@
-import { ICommonFilter } from "../shared/models/common-filter.interface"
-import { ICommonResponse } from "../shared/models/common-response.interface"
+import { ICommonFilter } from '../shared/models/common-filter.interface';
+import { ICommonResponse } from '../shared/models/common-response.interface';
 
 export interface IFlightBriefingFilter extends ICommonFilter {
   params: Array<IFlightBriefingFilterData>;

@@ -6,16 +6,9 @@ import { AppComponent } from './app.component';
 import { BackgroundComponent } from './components/background/background.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BackgroundComponent,
-  ],
-  imports: [
-    FlightBriefingModule,
-    BrowserModule,
-    SharedModule,
-  ],
+  declarations: [AppComponent, BackgroundComponent],
+  imports: [FlightBriefingModule, BrowserModule, SharedModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

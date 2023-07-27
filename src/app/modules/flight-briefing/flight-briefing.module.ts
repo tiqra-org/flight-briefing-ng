@@ -9,22 +9,9 @@ import { FlightBriefingService } from './flight-briefing.service';
 import { FlightBriefingRepository } from './flight-briefing.repository';
 
 @NgModule({
-  declarations: [
-    FilterComponent,
-    FlightBriefingComponent,
-    ListComponent,
-  ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    SharedModule,
-  ],
-  exports: [
-    FlightBriefingComponent,
-  ],
-  providers: [
-    FlightBriefingService,
-    FlightBriefingRepository,
-  ],
+  declarations: [FilterComponent, FlightBriefingComponent, ListComponent],
+  imports: [CommonModule, ReactiveFormsModule, SharedModule],
+  exports: [FlightBriefingComponent],
+  providers: [FlightBriefingService, FlightBriefingRepository],
 })
-export class FlightBriefingModule { }
+export class FlightBriefingModule {}

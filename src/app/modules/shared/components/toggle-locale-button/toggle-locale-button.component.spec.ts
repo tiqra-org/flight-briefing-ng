@@ -8,7 +8,7 @@ describe('ToggleLocaleButtonComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ToggleLocaleButtonComponent]
+      declarations: [ToggleLocaleButtonComponent],
     });
     fixture = TestBed.createComponent(ToggleLocaleButtonComponent);
     component = fixture.componentInstance;

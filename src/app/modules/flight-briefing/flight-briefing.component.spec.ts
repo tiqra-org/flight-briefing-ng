@@ -8,7 +8,7 @@ describe('FlightBriefingComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FlightBriefingComponent]
+      declarations: [FlightBriefingComponent],
     });
     fixture = TestBed.createComponent(FlightBriefingComponent);
     component = fixture.componentInstance;

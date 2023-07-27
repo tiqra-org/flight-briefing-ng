@@ -18,7 +18,7 @@ export const API = {
 };
 
 export const HIGHLIGHT_CODES = ['BKN', 'FEW', 'SCT'];
-  
+
 export const HIGHLIGHT_COLORS = {
   INFO: 'text-blue-600',
   DANGER: 'text-rose-600',

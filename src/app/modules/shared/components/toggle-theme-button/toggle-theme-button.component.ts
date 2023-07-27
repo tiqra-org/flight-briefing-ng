@@ -8,7 +8,6 @@ const DARK_MODE_CLASS = 'dark';
   templateUrl: './toggle-theme-button.component.html',
 })
 export class ToggleThemeButtonComponent {
-
   constructor(@Inject(DOCUMENT) private _document: HTMLElement) {}
   isDark = false;
   toggleDark = () => {
@@ -23,5 +22,5 @@ export class ToggleThemeButtonComponent {
         rootHtml?.classList.remove(DARK_MODE_CLASS);
       }
     }
-  }
+  };
 }

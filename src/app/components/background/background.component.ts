@@ -7,5 +7,5 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class BackgroundComponent {
-  clouds = [1,2,3,4,5];
+  clouds = [1, 2, 3, 4, 5];
 }

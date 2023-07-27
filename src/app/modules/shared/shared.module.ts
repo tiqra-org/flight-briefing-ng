@@ -10,7 +10,6 @@ import { DarkModeIconComponent } from './icons/dark-mode-icon/dark-mode-icon.com
 import { LightModeIconComponent } from './icons/light-mode-icon/light-mode-icon.component';
 import { ApiClient } from './services/api/api-client';
 
-
 @NgModule({
   declarations: [
     HelpTextComponent,
@@ -22,9 +21,7 @@ import { ApiClient } from './services/api/api-client';
     LightModeIconComponent,
     UpperCaseDirective,
   ],
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   exports: [
     HelpTextComponent,
     ToggleLocaleButtonComponent,
@@ -35,8 +32,6 @@ import { ApiClient } from './services/api/api-client';
     LightModeIconComponent,
     UpperCaseDirective,
   ],
-  providers: [
-    ApiClient,
-  ]
+  providers: [ApiClient],
 })
-export class SharedModule { }
+export class SharedModule {}

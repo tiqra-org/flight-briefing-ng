@@ -11,14 +11,13 @@ const enum HttpStatusCodes {
   Ok = 200,
   Created = 201,
   NoContent = 204,
-};
+}
 
 @Injectable()
 export class ApiClient<T> implements IApiClient<T> {
-
   private async send(url: string, request: RequestInit): Promise<T> {
     const defaults = {
-      headers
+      headers,
     };
 
     const init = Object.assign({}, defaults, request);
