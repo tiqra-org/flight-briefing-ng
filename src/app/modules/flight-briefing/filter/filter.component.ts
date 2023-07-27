@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { AbstractControl, FormArray, FormControl, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  FormArray,
+  FormControl,
+  FormGroup,
+} from '@angular/forms';
 import {
   AIRPORTS_PATTERN,
   COUNTRIES_PATTERN,
