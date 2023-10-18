@@ -83,12 +83,12 @@ export class FilterComponent {
   onSubmit = () => {
     if (this.form.valid) {
       const reportTypes = this.reportTypesValue;
-      const airports = this.airportsValue;
+      const stations = this.airportsValue;
       const countries = this.countriesValue;
 
       const data = {
         reportTypes,
-        airports,
+        stations,
         countries,
       };
 

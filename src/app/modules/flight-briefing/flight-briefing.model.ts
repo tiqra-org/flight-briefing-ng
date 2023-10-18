@@ -8,7 +8,7 @@ export interface IFlightBriefingFilter extends ICommonFilter {
 export interface IFlightBriefingFilterData {
   id?: string;
   reportTypes: Array<string>;
-  airports: Array<string>;
+  stations: Array<string>;
   countries: Array<string>;
 }
 
